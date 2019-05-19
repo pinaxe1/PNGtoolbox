@@ -3,10 +3,11 @@
 Created on Sun Apr  11 .
 @author: pinaxe
 
-Renumber class to unify and then join different datasets.
+List masks with image mode name and classes present on each mask image.
 
 """
-import cv2
+import numpy
+from PIL import Image 
 from os import listdir
 from os.path import isfile, join
 
@@ -15,8 +16,8 @@ mypath="C:/D/notebooks/fcn-mobilenet-128/Data_zoo/camvid/1/"
 
 onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
 for fi in onlyfiles :
-    dst=cv2.imread(mypath+fi)
-    print( fi )
-    dst1 = dst.flatten().tolist()
+    dst=Image.open(mypath+fi)
+    
+    dst1 = numpy.array(dst).flatten().tolist()
     dstClass=set(dst1)
-    print(dstClass)
+    print(dst.mode, fi, dstClass)
