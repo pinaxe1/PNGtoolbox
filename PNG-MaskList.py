@@ -13,6 +13,7 @@ from os.path import isfile, join
 
 
 mypath="C:/D/notebooks/fcn-mobilenet-128/Data_zoo/camvid/1/"
+#mypath="src/"
 
 onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
 for fi in onlyfiles :
