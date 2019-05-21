@@ -19,7 +19,7 @@ from os import listdir
 from os.path import isfile, join
 
 ExpectedLClasses={0, 33, 6, 7, 27, 21}
-mypath="C:/D/notebooks/fcn-mobilenet-128/Data_zoo/camvid/1/"
+mypath="C:/D/notebooks/fcn-mobilenet-128/Data_zoo/camvid/3/"
 #mypath="src/"
 
 onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
