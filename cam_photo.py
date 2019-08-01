@@ -1,5 +1,5 @@
 import cv2
-import time
+
 '''
 The script intended to collect images from camera
 Mouse klick will grab frame from camera and save it to file.
@@ -11,7 +11,8 @@ def MouseEventCallback(event, x, y, flags, param):
         dataready=True
 
 def main(argv=None):
-    global dataready
+    global dataready 
+    img_counter=1
     cam = cv2.VideoCapture(0)
     windowName = 'Drawing'
     cv2.namedWindow(windowName)
@@ -19,9 +20,8 @@ def main(argv=None):
     while (True):
       _, img = cam.read()  
       if dataready:
-         #######
          img_name = "opencv_frame_{}.png".format(img_counter)
-         cv2.imwrite(img_name, frame)
+         cv2.imwrite(img_name, img)
          print("{} written!".format(img_name))
          img_counter += 1
          dataready=False
@@ -30,8 +30,9 @@ def main(argv=None):
       if key== ord('x'):
          break
     cv2.destroyAllWindows()
+
 '''
 '''
 dataready=False
 if __name__ == "__main__":
-   main()    
+   main()   
