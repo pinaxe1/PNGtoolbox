@@ -1,5 +1,5 @@
 import cv2
-
+from datetime import datetime
 '''
 The script intended to collect images from camera
 Mouse klick will grab frame from camera and save it to file.
@@ -20,7 +20,8 @@ def main(argv=None):
     while (True):
       _, img = cam.read()  
       if dataready:
-         img_name = "opencv_frame_{}.png".format(img_counter)
+         now = datetime.now() 
+         img_name = now.strftime("%m%d%Y%H%M%S")+".png"
          cv2.imwrite(img_name, img)
          print("{} written!".format(img_name))
          img_counter += 1
