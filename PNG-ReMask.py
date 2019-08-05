@@ -20,7 +20,8 @@ Allowed Masks are
 27 - Soil               - Ground
 6  - Any solid thing    - Truck 
 
-For more details see class_names.py
+For more details about label name see 
+https://github.com/abreheret/PixelAnnotationTool/blob/master/src/labels.cpp
 """
 ExpectedLClasses={0, 33, 6, 7, 27, 21} # Classes I currently use in the dataset for FCN-128 
 
